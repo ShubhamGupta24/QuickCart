@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Products {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: blue;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: .5fr 1.5fr .5fr;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: white;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_tag {
+    object-fit: contain;
+}
+
+.add {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+    height: 25px;
+    width: 25px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.add:hover {
+    color: white;
+    background-color: blue;
+}
+
+.set {
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.count {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#star_count {
+    display: none;
+}
+
+.stars:hover #star_count {
+    display: inline;
+}
+
+.cart {
+    min-height: 78vh;
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.cart h1 {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart_card {
+    display: grid;
+    grid-template-columns: .5fr 1.5fr .5fr .5fr .25fr;
+    cursor: pointer;
+    margin: 10px;
+    padding: 5px;
+}
+
+.clear {
+    padding: 5px;
+    border: 2px solid red;
+    color: red;
+    border-radius: 5px;
+    background-color: white;
+    margin: 10px;
+}
+
+
+.all {
+    float: right;
+}
+
+.delete {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: red;
+}
+
+.delete:hover,
+.clear:hover {
+    color: white;
+    background-color: red;
+}
+
+.bill {
+    float: right;
+    margin: 10px;
+    padding: 10px;
+    width: fit-content;
+}
+
+
+.bill button {
+    color: white;
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #FFA700;
+    width: 100%;
+}
+
+.empty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.continue {
+    color: white;
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #FFA700;
+}
+
+@media (max-width:600px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cart_card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .bill {
+        float: none;
+    }
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}

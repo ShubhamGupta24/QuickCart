@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tilt Neon", sans-serif;
+}
+
+.active {
+  background-color: rgba(2, 211, 243, 0.668);
+  outline: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+nav {
+  display: flex;
+  margin: 10px;
+  padding: 2px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+  color: white;
+  border-radius: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.icons {
+  padding: 1vw;
+  color: white;
+}
+
+.icons#brand {
+  color: white;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#brandicon {
+  height: 4vmax;
+  width: 4vmax;
+  margin-right: 0;
+}
+
+
+.icons:link {
+  text-decoration: none;
+}
+
+.icons:hover {
+  text-decoration: none;
+  background-color: rgba(2, 211, 243, 0.668);
+  outline: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.menu {
+  display: none
+}
+
+@media (max-width:600px) {
+  ul {
+    display: none;
+  }
+
+  ul.show {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .menu:hover {
+    background-color: rgba(2, 211, 243, 0.668);
+    outline: 2px solid rgb(255, 255, 255);
+    border-radius: 10px;
+  }
+
+}

@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Home Page */
+.home {
+    min-height: 100vh;
+    margin: 10px;
+    padding: 4px;
+    border-radius: 20px;
+    background-color: blue;
+}
+
+.carousel {
+    margin: 20px;
+}
+
+.advertisement {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    height: 200vh;
+}
+
+.ad {
+    height: 100vh;
+    width: 90vw;
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.adphoto {
+    object-fit: contain;
+    width: 60%;
+    height: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    gap: 5px;
+    color: blue;
+    align-items: center;
+}
+
+.writeup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80%;
+    font-weight: bold;
+}
+
+.shop {
+    display: flex;
+    padding: 20px;
+    margin: 5px;
+    background-color: #f4c63d;
+    color: blue;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+
+.photo {
+    display: flex;
+    margin: 5px;
+    height: 60px;
+    width: 60px;
+    border-radius: 120px;
+    outline: 1.5px solid black;
+}
+
+@media(max-width: 1024px) {
+    .advertisement {
+        height: 150vh;
+    }
+
+    .ad {
+        height: 70vh;
+    }
+
+    .writeup {
+        height: 100%;
+        width: 90%;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .adphoto {
+        object-fit: contain;
+        width: 60%;
+    }
+}
+
+
+@media (max-width:600px) {
+    .photo {
+        display: flex;
+        margin: 10px;
+        height: 40px;
+        width: 40px;
+        border-radius: 40px;
+    }
+
+    #two {
+        display: none;
+    }
+}
+
+/* For login and Register page */
+
+.box {
+    display: grid;
+    min-height: 78vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4%;
+    height: 100%;
+    background-color: blue;
+    color: white;
+    border-radius: 20px 0 0 20px;
+    font-size: larger;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 4%;
+    height: 100%;
+    color: blue;
+    border: 2px solid blue;
+    border-radius: 0 20px 20px 0;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 3px;
+    padding: 2px;
+    gap: 10px;
+}
+
+.input {
+    border: 2px solid blue;
+    border-radius: 5px;
+    padding: 2px;
+    color: blue;
+}
+
+.input::placeholder {
+    color: blue;
+}
+
+
+
+.btn-container {
+    display: flex;
+    margin: 5px;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.bttn {
+    padding: 5px;
+    color: blue;
+    background-color: transparent;
+    border: 2px solid blue;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(75, 61, 223, 0.652);
+}
+
+/* For About page */
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    border: 5px solid blue;
+    color: #FFC153;
+    background-color: #1B1D4A;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 3rem;
+}
+
+.myphoto {
+    height: 200px;
+    width: 200px;
+    border: 2px solid #FFC153;
+    border-radius: 100px;
+    animation: shadow-animation 3s infinite;
+}
+
+@keyframes shadow-animation {
+    0% {
+        box-shadow: 0 0 10px 5px #FFC153;
+    }
+
+    25% {
+        box-shadow: 10px 10px 20px 5px #FFC153;
+    }
+
+    50% {
+        box-shadow: 0 20px 30px 5px #FFC153;
+    }
+
+    75% {
+        box-shadow: -10px 10px 20px 5px #FFC153;
+    }
+
+    100% {
+        box-shadow: 0 0 10px 5px #FFC153;
+    }
+}
+
+.about_me {
+    margin: 3rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.about_project {
+    margin: 3rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+span {
+    font-weight: bold;
+}
+
+
+.details {
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+.details h3 {
+    margin-bottom: 1rem;
+    text-decoration: underline wavy #FFC153 2px;
+}
+
+.about_project h2 {
+    margin-bottom: 1rem;
+    text-decoration: underline wavy #FFC153 2px;
+}
+
+
+@media (max-width:1024px) {
+    .intro {
+        flex-direction: column;
+        flex-wrap: wrap-reverse;
+    }
+}
