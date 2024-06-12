@@ -23,10 +23,12 @@ export const Cart = () => {
   }
 
   const handleProceedBuying = async () => {
-    const stripe = await loadStripe("pk_test_51PJbN4SBPKOqa8UPLP58BXlQqDjecQZJ990ntdzOpLXrTEqFsEU3EYGDok2CcqU9PVLIyRNkbaOLLalQ50N5BSwq00WDqijBVC");
+    const stripe = await loadStripe(`${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`);
 
     try {
-      const res = await axios.post(process.env.REACT_APP_PAYMENT_CONNECT_API, cart);
+      console.log("api", process.env.REACT_APP_PAYMENT_CONNECT_API)
+
+      const res = await axios.post(`${process.env.REACT_APP_PAYMENT_CONNECT_API}`, cart);
       const session = await res.data;
 
       const result = await stripe.redirectToCheckout({

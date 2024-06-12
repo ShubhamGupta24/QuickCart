@@ -1,8 +1,10 @@
-const stripe = require('stripe')('sk_test_51PJbN4SBPKOqa8UPFU0SFZCb20J5aJg6WZd7yRKsqdISqge2QCyIYigIx8c9WEUJCjnIqxYGktB4yVLR0PqB2veB00h1ozsv5p');
+const stripe = require('stripe')(process.env.STRIPE_KEY);
 const { PriceParser } = require('../Helpers/PriceParser')
 
 const payments = async (req, res) => {
     try {
+
+        console.log("fgdtkhdtlhkdlhkdf;g")
         const lineItems = req.body.map((product) => ({
             price_data: {
                 currency: "inr",

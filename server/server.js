@@ -14,6 +14,8 @@ const errorMiddleware = require("./middlewares/error-middleware");
 // Invoking the  contact from controller
 const contactRoute = require("./routes/contact-route");
 
+
+console.log(process.env.ORIGIN_URL)
 const corsOptions = {
   origin: process.env.ORIGIN_URL,
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
