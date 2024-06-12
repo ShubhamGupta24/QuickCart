@@ -9,12 +9,8 @@ import { useAuth } from "../storeToken/auth";
 export const Header = () => {
 
   const [menuOpen, setMenuOpen] = useState(false);
-
-  console.log('hi from nav', menuOpen)
-
   const { isLoggedIn } = useAuth();
-  console.log(isLoggedIn)
-  console.log("login or not ", isLoggedIn);
+  
   return (
     <nav>
       <div className='brand'>

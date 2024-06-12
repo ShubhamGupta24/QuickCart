@@ -15,8 +15,6 @@ export const AuthProvider = ({ children }) => {
 
   //   this is the get the value in either true or false in the original state of token
   let isLoggedIn = !!token;
-  console.log("token", token);
-  console.log("isLoggedin ", isLoggedIn);
 
   //   to check whether is loggedIn or not
   const LogoutUser = () => {
@@ -29,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   const userAuthentication = async () => {
     try {
       if (token) {
-        const response = await fetch("http://localhost:5000/api/auth/user", {
+        const response = await fetch(process.env.REACT_APP_BACKEND_CONNECT_API + "user", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
@@ -39,8 +37,6 @@ export const AuthProvider = ({ children }) => {
         if (response.ok) {
           // getting the user data 👇
           const data = await response.json();
-          console.log("ySERdATA", data.userData)
-
           setUser(data.userData);
         } else {
           console.error("Error fetching user data", response);

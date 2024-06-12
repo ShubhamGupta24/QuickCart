@@ -10,7 +10,7 @@ import './style.css'
 
 export const Register = () => {
     const { storeTokenInLS } = useAuth();
-    const url = "http://localhost:5000/api/auth/register"
+    const url = process.env.REACT_APP_BACKEND_CONNECT_API + "register"
     const [input, setInput] = useState({
         username: "",
         email: "",

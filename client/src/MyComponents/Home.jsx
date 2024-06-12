@@ -18,7 +18,6 @@ export const Home = () => {
     swipeToSlide: true
   };
   useEffect(() => {
-    console.log("..app category", category)
     setCategory();
   }, [category])
 

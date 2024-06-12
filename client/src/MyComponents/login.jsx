@@ -18,11 +18,9 @@ export const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log("loginInput data : ", loginInput);
 
-      const url = "http://localhost:5000/api/auth/login"
+      const url = process.env.REACT_APP_BACKEND_CONNECT_API + "login"
       const response = await axios.post(url, loginInput);
-      console.log("response data : ", response);
 
       if (response.status === 200) {
         const responseData = await response.data;
@@ -31,17 +29,13 @@ export const Login = () => {
         toast.success("Login Successful");
         setLoginInput({ email: "", password: "" });
 
-        console.log("after login: ", responseData);
-        console.log("after login: ", responseData.token);
 
         //function created in the custom hook to store the jwt token in local storage
 
         storeTokenInLS(responseData.token);
-        navigate("/")
-        console.log(responseData);
+        navigate("/");
       } else {
-        alert("Invalid Credentials")
-        console.log("error inside response ");
+        alert("Invalid Credentials");
       }
     } catch (error) {
       console.error("Error", error);
@@ -51,7 +45,6 @@ export const Login = () => {
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name, value);
 
     setLoginInput({ ...loginInput, [name]: value });
   }

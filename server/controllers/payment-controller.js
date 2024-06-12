@@ -1,12 +1,8 @@
 const stripe = require('stripe')('sk_test_51PJbN4SBPKOqa8UPFU0SFZCb20J5aJg6WZd7yRKsqdISqge2QCyIYigIx8c9WEUJCjnIqxYGktB4yVLR0PqB2veB00h1ozsv5p');
-const { v4: uuidv4 } = require('uuid');
 const { PriceParser } = require('../Helpers/PriceParser')
 
 const payments = async (req, res) => {
     try {
-        console.log("cargt from", req.body);
-        const idempotency_key = uuidv4();
-
         const lineItems = req.body.map((product) => ({
             price_data: {
                 currency: "inr",
@@ -36,11 +32,10 @@ const payments = async (req, res) => {
                 },
             }],
             mode: 'payment',
-            success_url: 'http://localhost:3000/success',
-            cancel_url: 'http://localhost:3000/cancel',
+            success_url: process.env.SUCCESS_URL,
+            cancel_url: process.env.CANCEL_URL,
         });
 
-        console.log("session id ", session.id);
         res.json({ id: session.id });
     } catch (error) {
         console.log("Error creating checkout session: ", error);

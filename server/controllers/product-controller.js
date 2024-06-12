@@ -7,8 +7,6 @@ const getProducts = async (req, res) => {
     // Querying all documents from the collection
     try {
         const { category } = req.query;
-        console.log('hi from product-controller body')
-        console.log(category);
 
         // Accessing a specific collection directly
         const collection = mongoose.connection.db.collection(category);

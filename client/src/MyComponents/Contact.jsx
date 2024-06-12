@@ -20,8 +20,7 @@ export const Contact = () => {
     });
 
     const [input, setInput] = useState(defaultData);
-    console.log(typeof (user.phone))
-
+    
     if (user && userData) {
         setInput({
             username: user.username,

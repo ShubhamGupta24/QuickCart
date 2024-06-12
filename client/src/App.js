@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Header } from './MyComponents/Navbar';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from './MyComponents/Home';
@@ -22,10 +22,8 @@ import { useCartContext } from './Context/CartContext.jsx';
 function App() {
   const { category, setCategory } = useCartContext();
   useEffect(() => {
-    console.log("..app category", category)
     setCategory();
-  }, [category])
-  console.log("..fdgoerk", category)
+  }, [category]);
   return (
     <>
       <Router>

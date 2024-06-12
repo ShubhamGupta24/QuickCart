@@ -10,7 +10,6 @@ const validate = (schema) => async (req, res, next) => {
         const message = "Fill the input properly";
         const extraDetails = err.issues.map((curElem) => curElem.message);
 
-        console.log("dfdfghd",extraDetails)
         const error = {
             status,
             message,

@@ -33,7 +33,6 @@ const userSchema = new mongoose.Schema({
 // This ensures that the middleware is properly applied to user documents before they are saved to the database.
 userSchema.pre("save", async function () {
   const user = this;
-  console.log("actual data ", this);
 
   if (!user.isModified) {
     return next();

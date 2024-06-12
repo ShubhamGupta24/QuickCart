@@ -1,7 +1,6 @@
 const cartReducer = (state, action) => {
     let updatedProduct = "";
     let updatedProductList = null;
-    console.log("reducer page")
 
     switch (action.type) {
         case "SET_CATEGORY":
@@ -117,7 +116,6 @@ const cartReducer = (state, action) => {
 
 
         case "DELETE_ITEM":
-            console.log("delete")
             let updatedCart = state.cart.filter(
                 (curItem) => curItem.id !== action.payload.productId
             );
@@ -151,7 +149,6 @@ const cartReducer = (state, action) => {
                     console.log(SellingPrice.substring(1), price, quantity, "dfsdokofbkwmfromgwom")
                     accum.totalSize += quantity;
                     accum.totalAmount += parseInt(price, 10) * quantity;
-                    console.log(accum.totalAmount, "price")
                     return accum;
                 },
                 {

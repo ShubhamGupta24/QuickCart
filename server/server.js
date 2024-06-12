@@ -15,7 +15,7 @@ const errorMiddleware = require("./middlewares/error-middleware");
 const contactRoute = require("./routes/contact-route");
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: process.env.ORIGIN_URL,
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };

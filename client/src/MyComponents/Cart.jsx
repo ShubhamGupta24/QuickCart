@@ -26,7 +26,7 @@ export const Cart = () => {
     const stripe = await loadStripe("pk_test_51PJbN4SBPKOqa8UPLP58BXlQqDjecQZJ990ntdzOpLXrTEqFsEU3EYGDok2CcqU9PVLIyRNkbaOLLalQ50N5BSwq00WDqijBVC");
 
     try {
-      const res = await axios.post(`http://localhost:5000/api/payment/makepayments`, cart);
+      const res = await axios.post(process.env.REACT_APP_PAYMENT_CONNECT_API, cart);
       const session = await res.data;
 
       const result = await stripe.redirectToCheckout({

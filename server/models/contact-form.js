@@ -26,7 +26,6 @@ const contactSchema = new Schema({
 
 contactSchema.pre("save", async function () {
     const form = this;
-    console.log(form)
 })
 
 // create a new collections(Model) 
