@@ -94,7 +94,6 @@ const cartReducer = (state, action) => {
         case "SET_INCREMENT":
 
             updatedProduct = state.cart.map((curElem) => {
-                console.log("first")
                 if (curElem.id === action.payload.productId) {
                     let incAmount = curElem.quantity + 1;
                     return {
@@ -146,7 +145,6 @@ const cartReducer = (state, action) => {
                         if (ch !== ',')
                             price += ch
                     }
-                    console.log(SellingPrice.substring(1), price, quantity, "dfsdokofbkwmfromgwom")
                     accum.totalSize += quantity;
                     accum.totalAmount += parseInt(price, 10) * quantity;
                     return accum;

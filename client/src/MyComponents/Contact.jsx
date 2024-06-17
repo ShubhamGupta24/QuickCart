@@ -8,7 +8,6 @@ import './style.css';
 export const Contact = () => {
     const { user } = useAuth();
     const [userData, setUserData] = useState(true)
-    console.log(user)
     const url = process.env.REACT_APP_CONTACT_CONNECT_API;
 
     const [defaultData, setDefaultData] = useState({
@@ -54,7 +53,6 @@ export const Contact = () => {
             try {
                 const response = await axios.post(url, input);
 
-                console.log(response)
                 if (response.ok) {
                     toast.success("Contact form submitted");
                     setInput(defaultData);

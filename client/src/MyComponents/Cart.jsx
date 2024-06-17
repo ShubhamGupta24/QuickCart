@@ -26,7 +26,6 @@ export const Cart = () => {
     const stripe = await loadStripe(`${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`);
 
     try {
-      console.log("api", process.env.REACT_APP_PAYMENT_CONNECT_API)
 
       const res = await axios.post(`${process.env.REACT_APP_PAYMENT_CONNECT_API}`, cart);
       const session = await res.data;

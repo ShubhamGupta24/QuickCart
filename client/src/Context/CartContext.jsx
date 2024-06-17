@@ -39,7 +39,6 @@ const CartProvider = ({ children }) => {
     }
 
     const setProducts = (Products) => {
-        console.log('setProducts', Products);
         dispatch({ type: 'SET_PRODUCTS', payload: { Products } });
     }
 

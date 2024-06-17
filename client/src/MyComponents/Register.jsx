@@ -39,7 +39,6 @@ export const Register = () => {
         if (IsValidate()) {
             try {
                 const response = await axios.post(url, input);
-                console.log("response data : ", response);
 
                 if (response.status === 201) {
                     const responseData = await response.data;

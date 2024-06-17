@@ -7,7 +7,6 @@ import './Product.css';
 export const Product = () => {
     const { setProducts, addToCart, productList, setDecrement, setIncrement, category, setCategory, prevCategory } = useCartContext();
     const uri = process.env.REACT_APP_BACKEND_PRODUCT_API;
-    console.log(uri)
     const [page, setPage] = useState(1);
     const [productsPerPage] = useState(15); // Number of product cards to display per page 
     const indexOfLastProduct = page * productsPerPage;

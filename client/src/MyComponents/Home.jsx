@@ -43,7 +43,7 @@ export const Home = () => {
         <Slider {...settings}>
           {scroll.map((scroll) => (
             <div key={scroll.id}>
-              <Link to={"/Product/" + scroll.name}><img className='photo' src={scroll.src} alt={scroll.alt} onClick={() => { console.log('hi ', category); setCategory() }} /></Link>
+              <Link to={"/Product/" + scroll.name}><img className='photo' src={scroll.src} alt={scroll.alt} onClick={() => { setCategory() }} /></Link>
             </div>
           ))}
         </Slider>
