@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import axios from "axios"
 
 export const AuthContext = createContext();
 
@@ -27,8 +28,8 @@ export const AuthProvider = ({ children }) => {
   const userAuthentication = async () => {
     try {
       if (token) {
-        const response = await fetch(process.env.REACT_APP_BACKEND_CONNECT_API + "user", {
-          method: "GET",
+        console.log(process.env.REACT_APP_BACKEND_CONNECT_API)
+        const response = await axios.get(process.env.REACT_APP_BACKEND_CONNECT_API + "user", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

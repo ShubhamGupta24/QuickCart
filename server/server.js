@@ -16,7 +16,7 @@ const contactRoute = require("./routes/contact-route");
 
 
 const corsOptions = {
-  origin: process.env.ORIGIN_URL,
+  origin: '*',
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
