@@ -41,7 +41,7 @@ app.use("/api/payment", paymentRoute);
 app.use(errorMiddleware);
 
 
-const PORT = 5000;
+const PORT = 10000;
 
 
 connectDb().then(() => {
