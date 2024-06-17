@@ -16,7 +16,7 @@ const contactRoute = require("./routes/contact-route");
 
 
 const corsOptions = {
-  origin: '*',
+  origin: process.env.ORIGIN_URL,
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
@@ -44,7 +44,7 @@ const PORT = process.env.PORT || 5000;
 
 
 connectDb().then(() => {
-  app.listen(PORT,() => {
+  app.listen(PORT, () => {
     console.log(`server is running at port: ${PORT}`);
   });
 });
