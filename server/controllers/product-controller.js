@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 // ----------------
 //  Products logic
 // ----------------
@@ -14,7 +15,7 @@ const getProducts = async (req, res) => {
         // Querying data from the collection
         const documents = await collection.find({}).toArray();
 
-        console.log('Documents:', documents[0]);
+        
         return res.status(200).json({ message: `Products ${category} doc `, documents })
     } catch (error) {
         return res.status(500).json(`Internal Server Error: ${error}`);

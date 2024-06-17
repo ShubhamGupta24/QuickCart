@@ -53,9 +53,7 @@ userSchema.pre("save", async function () {
 
 //? Generate JSON Web Token
 userSchema.methods.generateToken = async function () {
-  console.log("I am token");
   try {
-    console.log(typeof ((this._id).toString()))
     return jwt.sign(
       {
         userId: this._id.toString(),

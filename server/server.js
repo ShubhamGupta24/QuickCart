@@ -15,7 +15,6 @@ const errorMiddleware = require("./middlewares/error-middleware");
 const contactRoute = require("./routes/contact-route");
 
 
-console.log(process.env.ORIGIN_URL)
 const corsOptions = {
   origin: process.env.ORIGIN_URL,
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
@@ -41,7 +40,7 @@ app.use("/api/payment", paymentRoute);
 app.use(errorMiddleware);
 
 
-const PORT = process.env.PORT||5000;
+const PORT = process.env.PORT || 5000;
 
 
 connectDb().then(() => {

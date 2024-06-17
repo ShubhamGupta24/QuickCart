@@ -9,7 +9,7 @@ export const Contact = () => {
     const { user } = useAuth();
     const [userData, setUserData] = useState(true)
     console.log(user)
-    const url = "http://localhost:5000/api/form/contact"
+    const url = process.env.REACT_APP_CONTACT_CONNECT_API;
 
     const [defaultData, setDefaultData] = useState({
         username: "",
@@ -20,7 +20,7 @@ export const Contact = () => {
     });
 
     const [input, setInput] = useState(defaultData);
-    
+
     if (user && userData) {
         setInput({
             username: user.username,
